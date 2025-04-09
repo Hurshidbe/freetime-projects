@@ -47,10 +47,27 @@
   transition: 0.5s;
 }
 
-.texts {
+.texts1 {
   font-family: calibri;
   background-color: transparent;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 55px;
   font-size: 25px;
+  font-weight: 1000;
+}
+.texts2 {
+  font-family: calibri;
+  background-color: transparent;
+  text-align: center;
+  padding-top: 55px;
+  font-size: 25px;
+  font-weight: 1000;
+}
+.texts3 {
+  font-family: calibri;
+  background-color: transparent;
+  text-align: center;
+  padding-top: 55px;
+  font-size: 25px;
+  font-weight: 1000;
 }
