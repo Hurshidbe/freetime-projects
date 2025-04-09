@@ -22,6 +22,7 @@
   border-radius: 50%;
   border: 4px black solid;
   opacity: 0.2;
+  transition: 0.5s;
 }
 
 .orange {
@@ -32,6 +33,7 @@
   border-radius: 50%;
   border: 4px black solid;
   opacity: 0.2;
+  transition: 0.5s;
 }
 
 .green {
@@ -42,4 +44,13 @@
   border-radius: 50%;
   border: 4px black solid;
   opacity: 0.2;
+  transition: 0.5s;
+}
+
+.texts {
+  font-family: calibri;
+  background-color: transparent;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 25px;
 }
