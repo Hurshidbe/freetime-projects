@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <div class="nizo">
+      <h2 style="text-align: center">Dars sizlarga ma'qul keldimi?</h2>
+      <button class="habtn" , style="background-color: green">Ha 😎</button>
+      <button class="yoqbtn" , style="background-color: red">Yo'q 😒</button>
+    </div>
+  </body>
+  <style>
+    .nizo {
+      display: inline-block;
+    }
+
+    .yoqbtn {
+      transition: 0.4s;
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .habtn {
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      color: white;
+    }
+  </style>
+  <script>
+    const nobtn = document.querySelector(".yoqbtn");
+    const yesbtn = document.querySelector(".habtn");
+    nobtn.addEventListener("mouseover", (event) => {
+      const btn = event.target;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const randomWidth = parseInt(Math.random() * (width - 120));
+      const ramdomHeight = parseInt(Math.random() * (height - 80));
+      console.log(randomWidth, ramdomHeight);
+      btn.style.transform = `translate( ${randomWidth}px, ${ramdomHeight}px)`;
+    });
+  </script>
+</html>
