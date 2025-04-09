@@ -1,0 +1,45 @@
+* {
+  align-items: center;
+  background-color: green;
+}
+
+.svetafor {
+  margin-top: 30px;
+  margin-left: 300px;
+  width: 220px;
+  height: 660px;
+  background-color: grey;
+  border-radius: 40px;
+  padding-left: 14px;
+  padding-top: 20px;
+  border: 5px black solid;
+}
+
+.red {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border-radius: 50%;
+  border: 4px black solid;
+  opacity: 0.2;
+}
+
+.orange {
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  border-radius: 50%;
+  border: 4px black solid;
+  opacity: 0.2;
+}
+
+.green {
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  border-radius: 50%;
+  border: 4px black solid;
+  opacity: 0.2;
+}
