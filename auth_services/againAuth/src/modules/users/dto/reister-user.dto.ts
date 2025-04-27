@@ -17,4 +17,8 @@ export class registerDto {
   @IsString()
   @IsNotEmpty()
   password: string;
+
+  @IsString()
+  @Length(2, 20)
+  name: string;
 }
