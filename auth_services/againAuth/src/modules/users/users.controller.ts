@@ -7,11 +7,13 @@ import {
   Param,
   Delete,
   Res,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { registerDto } from './dto/reister-user.dto';
 import { loginDto } from './dto/login-user.dto';
 import { Response } from 'express';
+import { AuthGuard } from 'src/guards/authGuard';
 
 @Controller('users')
 export class UsersController {
@@ -20,7 +22,6 @@ export class UsersController {
   register(@Body() data: registerDto) {
     return this.usersService.register(data);
   }
-
   @Post('login')
   async login(
     @Body() data: loginDto,
@@ -29,5 +30,10 @@ export class UsersController {
     const { token, message } = await this.usersService.login(data);
     res.cookie('authToken', token, { httpOnly: true });
     return message;
+  }
+  @UseGuards(AuthGuard)
+  @Get()
+  ckekguard() {
+    return true;
   }
 }
