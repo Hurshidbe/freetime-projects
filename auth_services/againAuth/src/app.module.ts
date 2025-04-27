@@ -5,6 +5,7 @@ import { UsersModule } from './modules/users/users.module';
 import { PostsModule } from './modules/posts/posts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -24,6 +25,17 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
           password: service.get('password'),
           database: service.get('database'),
           username: 'postgres',
+        };
+      },
+    }),
+    JwtModule.registerAsync({
+      global: true,
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (service: ConfigService) => {
+        return {
+          secret: service.get('jwt'),
+          signOptions: { expiresIn: '5m' },
         };
       },
     }),

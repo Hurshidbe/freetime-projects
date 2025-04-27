@@ -10,6 +10,11 @@ export class UsersService {
 
   async register(data: registerDto) {
     if (!data) throw new HttpException("ma'lumotlarni to'g'ri kiriting", 401);
+    const isuniq = await this.userRepo.findOne({
+      where: { email: data.email },
+    });
+    if (isuniq)
+      throw new HttpException('bu email oldin registratsiya qilingan', 402);
     const savingUser = await this.userRepo.save(data);
     return {
       status: `salom ${data.name}. siz registratsiyadan o'tdingiz`,
