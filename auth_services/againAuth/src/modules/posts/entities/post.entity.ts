@@ -1,5 +1,6 @@
 import { title } from 'process';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/modules/users/entities/user.entity';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'posts' })
 export class Postlar {
@@ -11,4 +12,7 @@ export class Postlar {
 
   @Column()
   description: string;
+
+  @ManyToOne(() => User, (user) => user.posts)
+  user: User;
 }

@@ -37,7 +37,11 @@ export class UsersService {
     if (isvrfd.password !== data.password)
       throw new HttpException('email yoki parol hato', 403);
 
-    const token = this.JWT.sign({ id: isvrfd.id, email: isvrfd.email });
+    const token = this.JWT.sign({
+      id: isvrfd.id,
+      email: isvrfd.email,
+      name: isvrfd.name,
+    });
     return { message: `tizimga hush kelibsiz ${isvrfd.name}`, token };
   }
 }
