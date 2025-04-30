@@ -1,23 +1,34 @@
-import { Injectable, Post } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Posts } from './entities/post.entity';
 import { Repository } from 'typeorm';
 import { createPostDto } from './dto/create-post.dto';
 import { updatePostDto } from './dto/update-post.dto';
+import { Postlar } from './entities/post.entity';
 
 @Injectable()
 export class PostsService {
-  constructor(@InjectRepository(Posts) private postsRepo: Repository<Posts>) {}
-  create(createPostDto: createPostDto) {
-    return 'This action adds a new post';
+  constructor(
+    @InjectRepository(Postlar) private postsRepo: Repository<Postlar>,
+  ) {}
+
+  async create(createPostDto: createPostDto) {
+    if (!createPostDto.title || !createPostDto.description) {
+      throw new HttpException(`Ma'lumotlarni to'g'ri kiriting`, 402);
+    }
+
+    const savedPost = await this.postsRepo.save(createPostDto);
+    return { status: 'successfully added', post: savedPost };
   }
 
   findAll() {
-    return `This action returns all posts`;
+    return this.postsRepo.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} post`;
+  async findOne(id: string) {
+    if (!id) throw new HttpException(`ma'lumotlarni to'g'ri kiriting`, 402);
+    const post = await this.postsRepo.findOne({ where: { id: id } });
+    if (!post) throw new HttpException(`bu id da post mavjud emas`, 402);
+    return { status: 'success', post };
   }
 
   update(id: number, updatePostDto: updatePostDto) {

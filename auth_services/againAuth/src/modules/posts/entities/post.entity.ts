@@ -2,7 +2,7 @@ import { title } from 'process';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'posts' })
-export class Posts {
+export class Postlar {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
