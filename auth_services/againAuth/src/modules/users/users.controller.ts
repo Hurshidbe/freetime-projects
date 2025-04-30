@@ -31,9 +31,4 @@ export class UsersController {
     res.cookie('authToken', token, { httpOnly: true });
     return message;
   }
-  @UseGuards(AuthGuard)
-  @Get()
-  ckekguard() {
-    return true;
-  }
 }

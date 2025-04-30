@@ -31,11 +31,7 @@ export class PostsService {
     return { status: 'success', post };
   }
 
-  update(id: number, updatePostDto: updatePostDto) {
-    return `This action updates a #${id} post`;
-  }
+  update(id: number, updatePostDto: updatePostDto) {}
 
-  remove(id: number) {
-    return `This action removes a #${id} post`;
-  }
+  remove(id: number) {}
 }
