@@ -1,0 +1,30 @@
+////////////////////////   UZB
+
+AuthGuard bilan himoyalangan NestJS Auth API
+
+Ushbu loyiha NestJS asosida qurilgan va foydalanuvchilar uchun to‘liq autentifikatsiya funksiyalarini taqdim etadi. Loyihada quyidagilar amalga oshirilgan:
+
+- Register (ro'yxatdan o'tish): Foydalanuvchi yangi hisob yaratishi mumkin.
+- Login (tizimga kirish): Foydalanuvchi login qilganda uning passwordi bcrypt bilan heshlab saqlanadi va unga JWT token beriladi.
+- AuthGuard: Himoyalangan endpointlarga faqat token orqali kirish mumkin.
+- Parolni yangilash: Login bo‘lgan foydalanuvchi o‘z parolini o‘zgartira oladi.
+- Delete account (logout): Foydalanuvchi o‘z ma’lumotlarini butunlay bazadan o‘chira oladi.
+
+Loyiha foydalanuvchi xavfsizligini ta’minlash, token orqali himoyalangan yo‘llarni boshqarish va real hayotdagi autentifikatsiya jarayonlarini amaliyotda qo‘llash uchun yaratilgan.
+
+
+
+//////////////////////   ENG
+
+NestJS Auth API Protected by AuthGuard
+
+This project is built with NestJS and provides full authentication functionality for users. The following features are implemented:
+
+- Register: Users can create a new account.
+- Login: When a user logs in, their password is securely hashed using bcrypt and a JWT token is generated.
+- AuthGuard: Access to protected endpoints is only allowed through a valid token.
+- Update Password: Authenticated users can update their password.
+- Delete Account (logout): Users can completely delete their data from the database.
+
+This project is designed to ensure user security, manage protected routes using tokens, and apply real-world authentication processes in practice.
+
