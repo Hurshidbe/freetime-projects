@@ -18,10 +18,10 @@ export class UsersService {
       upperCaseAlphabets: false,
       specialChars: false,
     });
-    const word: string = `dilshodbek ko't`;
+    const word: string = `_____________________`;
     await this.smsprovide.sendSms({
-      message: `StudyHub ilovasiga kirish kodi:${word}, `,
-      mobile_phone: '+998939453405', //
+      message: `StudyHub ilovasiga kirish kodi : faridun.ertaga.darsga.bormaa.ketasan, `,
+      mobile_phone: '+998200073177', //
       from: '+998977777777',
     });
     screenY;
